@@ -25,8 +25,7 @@ namespace workerd::api::node {
 namespace rust_i18n = ::workerd::rust::i18n;
 
 // Maps the C++ Encoding to the Rust bridge enum, following the kj-rs
-// convert.h idiom (see `NODEJS_EXCEPTIONS_RUST`'s equivalent in
-// exceptions.c++), so callers use `kj::from<rust_i18n::Encoding>(value)`. It
+// convert.h idiom, so callers use `kj::from<rust_i18n::Encoding>(value)`. It
 // is `static` (rather than in an anonymous namespace) because ADL is how
 // `kj::from<Target>` locates this overload, and ADL does not search an
 // unnamed namespace nested inside the argument type's namespace. The switch
